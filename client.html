@@ -11,7 +11,7 @@
 
           socket.onmessage = function(msg) {
             $('#Log').empty();
-            $('#Log').append(msg + '</br>');
+            $('#Log').append(msg.data + '</br>');
           }
         }
 
@@ -24,7 +24,6 @@
     <div id="container">
       <h3>WebSocket Client 0.1</h3>
     <div id="Log"></div>
-      Eingabe: <input id="text" type="text" />
     </div>
   </body>
 
