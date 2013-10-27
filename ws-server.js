@@ -15,6 +15,8 @@ function sendCounter(ws) {
 wss.on('connection', function(ws) {
   console.log('client verbunden...');
 
+  sendCounter(ws);
+
   var interval2 = setInterval(function() {
     sendCounter(ws);
   }, interval_ms);
