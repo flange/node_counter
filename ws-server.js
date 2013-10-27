@@ -12,14 +12,15 @@ function sendCounter(ws) {
   ws.send(cnt.toString());
 }
 
-
 wss.on('connection', function(ws) {
   console.log('client verbunden...');
 
-  var interval1 = setInterval(increment, interval_ms);
   var interval2 = setInterval(function() {
     sendCounter(ws);
   }, interval_ms);
 
-
 });
+
+
+setInterval(increment, interval_ms);
+
