@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+        function connect() {
+          var socket = new WebSocket("ws://127.0.0.1:8080");
+
+          socket.onmessage = function(msg) {
+            $('#Log').empty();
+            $('#Log').append(msg + '</br>');
+          }
+        }
+
+        connect();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h3>WebSocket Client 0.1</h3>
+    <div id="Log"></div>
+      Eingabe: <input id="text" type="text" />
+    </div>
+  </body>
+
+</html>
